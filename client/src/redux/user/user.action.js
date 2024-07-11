@@ -20,7 +20,7 @@ export const login = (user) => async (dispatch) => {
     );
     return dispatch(userSuccess(userData.data));
   } catch (error) {
-    return dispatch(userFail(error.response.data.message));
+    return dispatch(userFail(error.response));
   }
 };
 
@@ -67,6 +67,6 @@ export const getUserDetails = () => async (dispatch) => {
     });
     return dispatch(userSuccess(userData.data.user));
   } catch (error) {
-    return dispatch(userFail(error.response.data.message));
+    return dispatch(userFail(error.response));
   }
 };
