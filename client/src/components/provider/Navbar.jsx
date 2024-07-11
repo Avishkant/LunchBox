@@ -16,6 +16,10 @@ function Navbar({open,setOpen}) {
           {open?<GrClose className='text-teal-500'/>:<FaBars />}
         </button>
       </div>
+      {/*  add about the Provider
+      <div>
+         <p>Rishi da dhaba</p>  
+      </div> */}
     </div>
   )
 }
