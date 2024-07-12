@@ -19,7 +19,7 @@ function Footer() {
             />tiffinwallah@gmail.com</li>
             <li className='px-2 flex gap-1 items-center text-lg'><BsFillTelephoneFill className=''
             />7000989898 / 8000989898</li>
-            <li className='px-2 py-3 flex gap-2 items-center  text-lg cursor-pointer'><BsFacebook color="primary" /> <BsInstagram sx={{ color: "pink[500]" }} /> <BsTwitter color="primary" /></li>
+            <li className='px-5 py-3 flex gap-6 items-center  text-xl cursor-pointer'><BsFacebook color="primary" /> <BsInstagram sx={{ color: "pink[500]" }} /> <BsTwitter color="primary" /></li>
           </ul>
         </div>
         <div className="links order-2  md:pt-4 md:pl-5 lg:flex flex-col items-center">

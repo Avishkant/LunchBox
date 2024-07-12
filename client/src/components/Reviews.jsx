@@ -1,34 +1,42 @@
-import React from 'react'
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
-import { Avatar, Rating } from '@mui/material'
-import { useSelector } from 'react-redux'
-dayjs.extend(relativeTime)
+import React from 'react';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import { Avatar, Rating } from '@mui/material';
+import { useSelector } from 'react-redux';
+
+dayjs.extend(relativeTime);
+
 function Reviews() {
-    const reviews = useSelector((state) => state.reviews.providerReviews)
+    const reviews = useSelector((state) => state.reviews.providerReviews);
+
     return (
-        <div>
-            {reviews && reviews.length > 0 ?
-                <div className='md:px-8 px-2'>
-                    <h1 className='font-semibold py-3 text-xl'>Customers Reviews</h1>
-                    <div className='flex gap-3 flex-col'>
+        <div className="bg-gradient-to-r from-teal-50 to-white min-h-screen py-10">
+            {reviews && reviews.length > 0 ? (
+                <div className="container mx-auto px-4 md:px-8">
+                    <h1 className="text-2xl font-bold text-primary mb-6 text-center">Customer Reviews</h1>
+                    <div className="space-y-6">
                         {reviews.map((review, idx) => (
-                            <div className='border-b py-2' key={idx}>
-                                <div className='flex gap-3 items-center'>
+                            <div key={idx} className="border border-gray-200 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                                <div className="flex items-center gap-4 mb-2">
                                     <Avatar />
-                                    <h5 className='font-medium'>{review.user.name}</h5>
+                                    <h5 className="text-lg font-medium">{review.user.name}</h5>
                                 </div>
-                                <div className='py-1'>
-                                    <Rating name="read-only" size='small' value={review.rating} precision={0.5} readOnly />
+                                <div className="flex items-center mb-2">
+                                    <Rating name="read-only" size="small" value={review.rating} precision={0.5} readOnly />
                                 </div>
-                                <p className='pb-2 text-gray-400'>{dayjs().to(dayjs(review.createdAt))}</p>
-                                <p className='text-gray-600 md:w-1/2'>{review.message}</p>
+                                <p className="text-sm text-gray-400 mb-2">{dayjs().to(dayjs(review.createdAt))}</p>
+                                <p className="text-gray-700">{review.message}</p>
                             </div>
                         ))}
                     </div>
-                </div> : null}
+                </div>
+            ) : (
+                <div className="text-center py-10">
+                    <p className="text-lg font-semibold text-gray-500">No Reviews Available</p>
+                </div>
+            )}
         </div>
-    )
+    );
 }
 
-export default Reviews
+export default Reviews;
