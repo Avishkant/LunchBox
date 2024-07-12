@@ -27,7 +27,7 @@ env.config();
 // }))
 // >>>>>>> caa9e46c53c46e4201cdf7408d499e5c0380425d
 app.use(cors({
-        origin: [`${BASE_URL}`], 
+        origin: [`${process.env.BASE_URL}`], 
         methods: ['GET', 'PUT', 'POST','DELETE'], 
         allowedHeaders: ['Content-Type', 'Authorization', 'x-csrf-token'], 
         credentials: true
@@ -38,7 +38,7 @@ app.use(cookieParser())
 
 var originsWhitelist = [
     // 'https://tiffin-managment-client.vercel.app',
-    `${BASE_URL}`
+    `${process.env.BASE_URL}`
  ];
  var corsOptions = {
      origin: function(origin, callback){

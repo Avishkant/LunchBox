@@ -15,11 +15,11 @@ export const getAllFood = (_id) => async (dispatch) => {
     dispatch(foodRequest());
     const foodData = await axios({
       method: "GET",
-      url: `${uri}api/v1/food/provider/${_id}`,
+      url: `${uri}/api/v1/food/provider/${_id}`,
     });
     return dispatch(foodSuccess(foodData.data));
   } catch (error) {
-    return dispatch(foodFail(error.response.data.message));
+    return dispatch(foodFail(error.response));
   }
 };
 
