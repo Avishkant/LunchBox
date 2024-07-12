@@ -15,7 +15,7 @@ export const addReview = (data) => async (dispatch) => {
     dispatch(reviewRequest());
     const review = await axios({
       method: "POST",
-      url: `${uri}api/v1/review`,
+      url: `${uri}/api/v1/review`,
       data,
     });
     dispatch(addReviewSuccess(review.data));
@@ -28,7 +28,7 @@ export const getAllReview = () => async (dispatch) => {
     dispatch(reviewRequest());
     const review = await axios({
       method: "GET",
-      url: `${uri}api/v1/review`,
+      url: `${uri}/api/v1/review`,
     });
     dispatch(allReviewSuccess(review.data));
   } catch (error) {
@@ -40,7 +40,7 @@ export const getProvidersReview = (_id) => async (dispatch) => {
     dispatch(providerReviewRequest());
     const review = await axios({
       method: "GET",
-      url: `${uri}api/v1/review/${_id}`,
+      url: `${uri}/api/v1/review/${_id}`,
     });
     dispatch(reviewSuccess(review.data));
   } catch (error) {

@@ -13,7 +13,7 @@ export const getInitialData = async (dispatch) => {
     const data = await axios({
       method: "GET",
       // url: "http://localhost:5000/api/v1/initialData",
-      url: `${uri}api/v1/initialData`,
+      url: `${uri}/api/v1/initialData`,
     });
     dispatch(initialDataSuccess(data.data));
   } catch (error) {
