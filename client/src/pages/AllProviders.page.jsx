@@ -19,7 +19,7 @@ function AllProvidersPage() {
     </Typography>
   ];
   const [searchedProviders, setSearchedProviders] = useState([]);
-  const [allProviders, setAllProviders] = useState([]);
+  const [allProviders, setAllProviders] = useState(providers);
   const [searchData, setSearchData] = useState("");
   const [isSearch, setIsSearch] = useState(false);
 
