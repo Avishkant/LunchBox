@@ -9,12 +9,15 @@ import {
   updateUserOrderSuccess,
 } from "./order.reducer";
 
+const uri = process.env.REACT_APP_BASE_URL;
+
 export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch(orderRequest());
     const orders = await axios({
       method: "GET",
-      url: `http://localhost:5000/api/v1/order/provider`,
+      // url: `http://localhost:5000/api/v1/order/provider`,
+      url: `${uri}api/v1/order/provider`,
     });
     dispatch(orderSuccess(orders.data));
   } catch (error) {
@@ -26,7 +29,8 @@ export const getUserOrders = () => async (dispatch) => {
     dispatch(orderRequest());
     const orders = await axios({
       method: "GET",
-      url: "http://localhost:5000/api/v1/order/user",
+      // url: "http://localhost:5000/api/v1/order/user",
+      url: `${uri}api/v1/order/user`,
     });
     return dispatch(userOrderSuccess(orders.data));
   } catch (error) {
@@ -38,7 +42,8 @@ export const addOrder = (data) => async (dispatch) => {
     dispatch(orderRequest());
     const order = await axios({
       method: "POST",
-      url: `http://localhost:5000/api/v1/order`,
+      // url: `http://localhost:5000/api/v1/order`,
+      url: `${uri}api/v1/order`,
       data,
     });
     dispatch(addOrderSuccess(order.data));
@@ -51,7 +56,8 @@ export const updateOrder = (data) => async (dispatch) => {
     dispatch(orderRequest());
     const order = await axios({
       method: "PUT",
-      url: `http://localhost:5000/api/v1/order/updateStatus`,
+      // url: `http://localhost:5000/api/v1/order/updateStatus`,
+      url: `${uri}api/v1/order/updateStatus`,
       data,
     });
     dispatch(updateOrderSuccess(order.data));
@@ -64,7 +70,8 @@ export const updateUserOrder = (data) => async (dispatch) => {
     dispatch(orderRequest());
     const order = await axios({
       method: "POST",
-      url: `http://localhost:5000/api/v1/order/updateStatus`,
+      // url: `http://localhost:5000/api/v1/order/updateStatus`,
+      url: `${uri}api/v1/order/updateStatus`,
       data,
     });
     dispatch(updateUserOrderSuccess(order.data));
@@ -77,7 +84,8 @@ export const deleteOrder = (data) => async (dispatch) => {
     dispatch(orderRequest());
     await axios({
       method: "DELETE",
-      url: `http://localhost:5000/api/v1/order/${data.order._id}`,
+    //  url: "http://localhost:5000/api/v1/order/${data.order._id}",
+    url: `${uri}api/v1/order/${data.order._id}`,
     });
   } catch (error) {
     return dispatch(orderFail(error.response.data.message));
