@@ -8,12 +8,14 @@ import {
   allReviewSuccess,
 } from "./review.reducer";
 
+const uri = process.env.REACT_APP_BASE_URL;
+
 export const addReview = (data) => async (dispatch) => {
   try {
     dispatch(reviewRequest());
     const review = await axios({
       method: "POST",
-      url: "http://localhost:5000/api/v1/review",
+      url: `${uri}/api/v1/review`,
       data,
     });
     dispatch(addReviewSuccess(review.data));
@@ -26,7 +28,7 @@ export const getAllReview = () => async (dispatch) => {
     dispatch(reviewRequest());
     const review = await axios({
       method: "GET",
-      url: "http://localhost:5000/api/v1/review",
+      url: `${uri}/api/v1/review`,
     });
     dispatch(allReviewSuccess(review.data));
   } catch (error) {
@@ -38,7 +40,7 @@ export const getProvidersReview = (_id) => async (dispatch) => {
     dispatch(providerReviewRequest());
     const review = await axios({
       method: "GET",
-      url: `http://localhost:5000/api/v1/review/${_id}`,
+      url: `${uri}/api/v1/review/${_id}`,
     });
     dispatch(reviewSuccess(review.data));
   } catch (error) {
