@@ -15,7 +15,7 @@ function NavbarLg({ name }) {
           <h1 className='font-bold text-xl font-mono'>Lunch Box</h1>
         </Link>
         <ul className='gap-4 flex items-center font-semibold '>
-          <li><Link to="/provider">Lunch Box</Link></li>
+          <li><Link to="/provider">Providers</Link></li>
           {name ? <ProfileAvatar name={name} /> : <NavbarMenu />}
         </ul>
       </div>

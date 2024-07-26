@@ -9,7 +9,7 @@ import { FaRegAddressCard } from 'react-icons/fa'
 import { FiUser, FiPhone } from 'react-icons/fi'
 import { providerRegister } from '../redux/provider/provider.action'
 import { clearError } from '../redux/provider/provider.reducer'
-import logo from '../components/TiffinWalaLogo.png'
+// import logo from '../components/TiffinWalaLogo.png'
 
 function ProviderRegistration() {
   const [name, setName] = useState("")
@@ -65,8 +65,8 @@ function ProviderRegistration() {
     <div>
       <div className='py-2 sm:px-8 px-2 shadow flex justify-between items-center'>
         <Link to="/" className='flex items-center'>
-          <img src={logo} className='h-8 object-contain' alt="" />
-          <h1 className='font-bold text-xl font-mono'>Tiffin Wala</h1>
+          <img src={`${process.env.PUBLIC_URL}/Lunch_Box.png`} className='h-8 object-contain' alt="" />
+          <h1 className='font-bold text-xl font-mono'>Lunch Box</h1>
         </Link>
         <Link to="/" className='flex items-center gap-2'>
           <BiArrowBack />

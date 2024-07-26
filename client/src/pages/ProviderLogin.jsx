@@ -5,7 +5,7 @@ import { BiArrowBack } from 'react-icons/bi'
 import { MdEmail } from 'react-icons/md'
 import { GrSecure } from 'react-icons/gr'
 import { loginProvider } from '../redux/provider/provider.action'
-import logo from '../components/TiffinWalaLogo.png'
+// import logo from '../components/TiffinWalaLogo.png'
 
 
 import { toast } from 'react-hot-toast'
@@ -41,8 +41,8 @@ function ProviderLogin() {
     <div>
       <div className='py-2 sm:px-8 px-2 shadow flex justify-between items-center'>
         <Link to="/" className='flex items-center'>
-          <img src={logo} className='h-8 object-contain' alt="" />
-          <h1 className='font-bold text-xl font-mono'>Tiffin Wala</h1>
+          <img src={`${process.env.PUBLIC_URL}/Lunch_Box.png`} className='h-8 object-contain' alt="" />
+          <h1 className='font-bold text-xl font-mono'>Lunch Box</h1>
         </Link>
         <Link to="/" className='flex items-center gap-2'>
           <BiArrowBack />
