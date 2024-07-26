@@ -33,7 +33,7 @@ function Footer() {
         </div>
       </div>
       <div className=" py-4 bg-slate-700 text-white">
-        <p className='text-normal text-center font-medium sm:text-lg sm:font-serif'>© Copyright 2024 LunchBox All rights reserved. Developed by LunchBox</p>
+        <p className='text-normal text-center font-medium sm:text-lg sm:font-serif'>© Copyright 2024 LunchBox All rights reserved. Developed by LunchBox Team</p>
       </div>
 
     </footer>
