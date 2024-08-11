@@ -5,7 +5,7 @@ TiffinManagment is a basic Tiffin Ordering Application that is build using the M
 
 ## Live Website
 
-- [TiffinManagment](https://lunchbox-0gi6.onrender.com/)
+- [LunchBox](https://lunchbox-0gi6.onrender.com/)
 
 # Features
 
