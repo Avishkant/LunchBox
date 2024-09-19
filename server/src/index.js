@@ -66,6 +66,7 @@ new CronJob('0 0 * * *', async () => {
   }, null, true, 'Asia/Kolkata');
 
 app.get('/',(req,res) =>{
+    res.send("here we are go")
     console.log("Server Is Running")
     }
 )
