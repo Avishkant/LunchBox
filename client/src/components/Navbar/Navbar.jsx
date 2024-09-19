@@ -12,10 +12,10 @@ function NavbarLg({ name }) {
       <div className='w-full md:flex hidden justify-between shadow items-center py-3 lg:px-16 md:px-12 sm:px-8 px-2'>
         <Link to="/" className='flex gap-1.5 items-center'>
           <img src={`${process.env.PUBLIC_URL}/Lunch_Box.png`} className='h-[70px] object-contain' alt="Logo" />
-          <h1 className='font-bold text-xl font-mono'>Lunch Box</h1>
+          
         </Link>
         <ul className='gap-4 flex items-center font-semibold '>
-          <li><Link to="/provider">Providers</Link></li>
+          <li><Link to="/provider">Check Providers</Link></li>
           {name ? <ProfileAvatar name={name} /> : <NavbarMenu />}
         </ul>
       </div>

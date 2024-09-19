@@ -6,7 +6,7 @@ import { MdEmail, MdDateRange } from 'react-icons/md'
 import { RiIncreaseDecreaseLine } from 'react-icons/ri'
 import { FiUser, FiPhone, FiClock } from 'react-icons/fi'
 import { addOrder } from '../../redux/order/order.action'
-import logo from '../TiffinWalaLogo.png'
+//import logo from "/Lunch_Box.png"
 
 function MealSubscription() {
   const user = useSelector((state) => state.user.user)
@@ -58,7 +58,7 @@ function MealSubscription() {
       "currency": "INR",
       "name": "TiffinWala",
       "description": "Test Transaction",
-      "image": logo,
+      "image": "/Lunch_Box.png",
       "handler": function (response) {
         if (response.razorpay_payment_id) {
           data.paymentStatus = "Success"
